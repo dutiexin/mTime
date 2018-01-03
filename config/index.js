@@ -11,6 +11,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+
       '/Service': {
           target: 'https://m.mtime.cn',
           host: 'm.maizuo.com',
