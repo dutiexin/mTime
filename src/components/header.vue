@@ -5,10 +5,10 @@
 			<li>首页</li>
 			<li>购票</li>
 			<li>
-				商城
-				<!-- <em>new</em> -->
+				<router-link to="/mall/index">商城</router-link>			
 			</li>
-			<li>发现</li>
+
+			<li><router-link to="/faxian">发现</router-link></li>
 			<li><i class="iconfont icon-wode"></i></li>
 		</ul>
 	</div>
@@ -52,5 +52,9 @@
 	em{
 		display: block;
 		position: -20px;
+	}
+	a{
+		color:#fff;
+		text-decoration: none;
 	}
 </style>

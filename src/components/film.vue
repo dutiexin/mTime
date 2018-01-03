@@ -30,8 +30,12 @@
 
 	
 <script >
-
+import Vue from "vue";
 import axios from "axios";
+import MintUI from 'mint-ui';
+import { Indicator } from 'mint-ui';
+import 'mint-ui/lib/style.css';
+Vue.use(MintUI);
 
 
 
@@ -44,10 +48,12 @@ import axios from "axios";
 		},
 		mounted:function(){
 			var that=this;
+			Indicator.open();
 			axios.get('/Service/callback.mi/Showtime/LocationMovies.api?locationId=729&t=2018131341456208')
 			  .then(function (response) {
 			    that.dataList=response.data.ms;
-			    console.log(that.dataList)
+			    console.log(that.dataList);
+			    Indicator.close();
 			  })
 			  .catch(function (error) {
 			    console.log(error);

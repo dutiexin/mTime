@@ -41,6 +41,10 @@
 ul,li{
   list-style: none;
 }
+ul{
+  height:0.4rem;
+  line-height:0.4rem
+}
 a{
   text-decoration: none;
 }
@@ -49,6 +53,9 @@ a{
     li{
       flex:1;
       text-align: center;
+      border-bottom: 1px solid #ebebeb;
+      
+
       a{
         color:#0074c5;
         font-size:1.2em;
@@ -68,4 +75,21 @@ a{
       color:#000;
     }
   }
+
+  .footerlink{
+    width:100%;
+    height:0.4rem;
+    padding-top:0.1rem;
+    background:#f6f6f6
+  }
+
+  a{
+    color:#000;
+  }
+
+  // .footer{
+  //   width:100%;
+  //   height:0.5rem;
+  //   margin-top: 0.1rem
+  // }
 </style>
