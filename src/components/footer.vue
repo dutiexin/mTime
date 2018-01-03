@@ -10,14 +10,22 @@
     <div class="footerlink">
       <ul class="navlink">
           <li><router-link to="">PC版</router-link></li>
-          <li class="line"><span></span></li>
+          <li class="line"><span>|</span></li>
           <li><router-link to="">客户端下载</router-link></li>
-          <li class="line"> <span></span></li>
+          <li class="line"> <span>|</span></li>
           <li><router-link to="">意见反馈</router-link></li>
-          <li class="line"><span></span></li>
+          <li class="line"><span>|</span></li>
           <li><router-link to="">帮助中心</router-link></li>
           
       </ul>
+    </div>
+    <div class="bottom">
+      <p>Copyright </p>
+      <div>
+        <p>2006-2018</p>
+        <p>Mtime.com Inc. All rights reserved.</p>
+
+      </div>
     </div>
 
 </div>
@@ -57,15 +65,35 @@ a{
   }
   .navlink{
     display:flex;
+    height:3em;
+    line-height:3em;
+    background: #f6f6f6;
     li:nth-child(odd){
       flex:1;
       text-align: center;
+      a{
+        font-size:1em;
+        color:#000;
+      }
     }
     .line{
       display: list-item;
       font-size:100%;
       height:1;
-      color:#000;
+      color:#777777;
+    }
+  }
+  .bottom{
+    height:4em;
+    background:#f6f6f6;
+    text-align:center;
+    color:#dfdfdf;
+    div{
+      text-align:center;
+      p{
+        display:inline-block;
+        color:#dfdfdf;
+      }
     }
   }
 </style>
