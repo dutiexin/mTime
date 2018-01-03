@@ -2,14 +2,11 @@
 	<div>
 		<ul>
 			<li><img src="../assets/logo_mtime.png" width="67" height="21"></li>
-			<li>首页</li>
-			<li>购票</li>
-			<li>
-				商城
-				<!-- <em>new</em> -->
-			</li>
-			<li>发现</li>
-			<li><i class="iconfont icon-wode"></i></li>
+			<li><router-link to="/">首页</router-link></li>
+			<li><router-link to="/tickets">购票</router-link></li>
+			<li><router-link to="/shopping">商城</router-link></li>
+			<li><router-link to="/find">发现</router-link></li>
+			<li><router-link to="/information"><i class="iconfont icon-wode"></i></router-link></li>
 		</ul>
 	</div>
 </template>
@@ -30,7 +27,10 @@
 		margin:0;
 		padding:0;
 	}
-
+	a{
+		text-decoration: none;
+		color:#fff;
+	}
 	ul{
 		width:100%;
 		height:0.6rem;

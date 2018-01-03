@@ -1,10 +1,12 @@
 <template>
 <div>
-    <div class="footer">
+    <div class="footer nav">
         <ul class="nav">
-          <li v-for="data in datalist" :key="data.id">
-            <router-link to="">{{data}}</router-link>
-          </li>
+            <li><router-link to="/">首页</router-link></li>
+            <li><router-link to="/tickets">购票</router-link></li>
+            <li><router-link to="/shopping">商城</router-link></li>
+            <li><router-link to="/find">发现</router-link></li>
+            <li><router-link to="/information">我的</router-link></li>
         </ul>
     </div>
     <div class="footerlink">
@@ -36,7 +38,7 @@
    name: 'footer-nav',
    data () {
      return {
-       datalist:["首页","购票","商城","发现","我的"]
+      
      }
    },
    components: {
@@ -53,6 +55,7 @@ a{
   text-decoration: none;
 }
   .nav{
+    width:100%;
     display:flex;
     li{
       flex:1;

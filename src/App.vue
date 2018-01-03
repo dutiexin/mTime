@@ -2,12 +2,11 @@
   <div id="app">
     <header1></header1>
 
-    <search1></search1>
-    <film></film>
-    <hotpoints></hotpoints>
+    <router-view/>
+    
     <footernav></footernav>
     
-    <router-view/>
+    
   </div>
 </template>
 
