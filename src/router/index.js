@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Header1 from '@/components/header.vue'
 import App from '@/components/header.vue'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [

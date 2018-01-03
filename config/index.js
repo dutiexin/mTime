@@ -11,14 +11,16 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-       '/Service/callback.mi': {
-              target: 'https://m.mtime.cn',
-              host: 'm.mtime.cn',
-              changeOrigin:true,
-              // pathRewrite: {
-              //     '^/v4/api': '/v4/api'
-              //   }
-          }
+
+      '/Service': {
+          target: 'https://m.mtime.cn',
+          host: 'm.maizuo.com',
+          changeOrigin:true,
+          // pathRewrite: {
+          //     '^/v4/api': '/v4/api'
+          //   }
+      }
+
     },
 
     // Various Dev Server settings
