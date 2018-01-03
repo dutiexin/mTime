@@ -4,7 +4,10 @@
 			<li><img src="../assets/logo_mtime.png" width="67" height="21"></li>
 			<li>首页</li>
 			<li>购票</li>
-			<li>商城</li>
+			<li>
+				商城
+				<!-- <em>new</em> -->
+			</li>
 			<li>发现</li>
 			<li><i class="iconfont icon-wode"></i></li>
 		</ul>
@@ -45,5 +48,9 @@
 		color:#fff;
 		font-weight: bold;
 		
+	}
+	em{
+		display: block;
+		position: -20px;
 	}
 </style>
