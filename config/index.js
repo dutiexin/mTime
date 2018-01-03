@@ -10,7 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+       '/Service/callback.mi': {
+              target: 'https://m.mtime.cn',
+              host: 'm.mtime.cn',
+              changeOrigin:true,
+              // pathRewrite: {
+              //     '^/v4/api': '/v4/api'
+              //   }
+          }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
