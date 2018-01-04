@@ -11,7 +11,7 @@
 		</div>
 		
 		<mt-swipe :auto="3000" style="height:250px;" class="lunbo">
-		  <mt-swipe-item v-for="data in lunboList">
+		  <mt-swipe-item v-for="data in lunboList" :key="data.id">
 		  	<img :src="data.image" />
 		  </mt-swipe-item>
 		  
