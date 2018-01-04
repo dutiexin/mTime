@@ -26,7 +26,7 @@
 		</ul>
 
 		<ul class="xilie">
-			<li v-for="data in lunboList">
+			<li v-for="(data,index) in lunboList" :key="index">
 				<img :src="data.checkedImage" />
 			</li>
 

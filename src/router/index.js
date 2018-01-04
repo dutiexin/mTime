@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Header1 from '@/components/header.vue'
+
 import App from '@/components/header.vue'
-import Shop from '@/components/shop.vue'
-import Home from '@/components/home.vue'
-import Faxian from '@/components/faxian.vue'
+
+
+import Home from '@/components/home'
+import Tickets from '@/components/tickets'
+import Shopping from '@/components/shopping'
+import Find from '@/components/find'
+import Information from '@/components/information'
 
 
 Vue.use(Router);
@@ -12,26 +16,37 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
+
    
     {
       path: '/',
       name: 'home',
       component: Home
     },
+
+  
+
     {
-      path: '/mall/index',
-      name: 'shop',
-      component: Shop
+      path: '/',
+      component: Home
     },
     {
-      path: '/faxian',
-      name: 'faxian',
-      component: Faxian
+      path:'/tickets',
+      component:Tickets
     },
+    {
+      path:'/shopping',
+      component:Shopping
+    },
+    {
+      path:'/find',
+      component:Find
+    },
+    {
+      path:'/information',
+      component:Information
+    }
 
-
-
-    
  
   ]
 })
