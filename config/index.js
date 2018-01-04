@@ -13,12 +13,17 @@ module.exports = {
     proxyTable: {
 
       '/Service': {
-          target: 'https://m.mtime.cn',
-          host: 'm.maizuo.com',
-          changeOrigin:true,
-          // pathRewrite: {
-          //     '^/v4/api': '/v4/api'
-          //   }
+        target: 'https://m.mtime.cn',
+        host: 'm.mtime.com',
+        changeOrigin: true,
+        // pathRewrite: {
+        //     '^/v4/api': '/v4/api'
+        //   }
+      },
+      '/api': {
+        target: 'https://ticket-m.mtime.cn',
+        host: 'ticket-m.mtime.cn',
+        changeOrigin: true,
       }
 
     },
@@ -31,7 +36,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */

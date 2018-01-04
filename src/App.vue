@@ -18,13 +18,14 @@ import Header from "@/components/header.vue";
 import Search from "@/components/search.vue";
 import Film from "@/components/film.vue";
 import Home from "@/components/home.vue";
+import Chosecity from "@/components/chosecity"
 
 
 Vue.component("header1",Header);
 Vue.component("search1",Search);
 Vue.component("film",Film);
 Vue.component("home",Home);
-
+Vue.component("chosecity",Chosecity);
 
 import HotPoints from "@/components/hotpoints"
 import Footer from "@/components/footer"
