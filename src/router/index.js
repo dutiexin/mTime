@@ -2,18 +2,26 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import App from '@/components/header.vue'
+
+
 import Home from '@/components/home'
 import Tickets from '@/components/tickets'
 import Shopping from '@/components/shopping'
 import Find from '@/components/find'
 import Information from '@/components/information'
+
 // find 子路由 >>>>>>
 import Journalism from '@/components/find/journalism'
 import Prevue from '@/components/find/prevue'
 import RankingList from '@/components/find/rankingList'
 import FilmReview from '@/components/find/filmReview'
 // find 子路由 <<<<<<
+
+
+
+
 Vue.use(Router);
+
 
 export default new Router({
   routes: [
@@ -62,6 +70,7 @@ export default new Router({
       path:'/information',
       component:Information
     }
+
  
   ]
 })

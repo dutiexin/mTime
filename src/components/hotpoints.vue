@@ -53,6 +53,14 @@ export default {
     ul,li{
         list-style: none;
     }
+
+    li{
+        border-bottom: 2px solid #ebebeb
+    }
+
+    ul{
+        margin-top: 0.1rem;
+    }
     #hotpoints li:first-child{
        padding-top: 0;
     }

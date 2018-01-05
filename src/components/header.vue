@@ -2,11 +2,13 @@
 	<div>
 		<ul>
 			<li><img src="../assets/logo_mtime.png" width="67" height="21"></li>
+
 			<li><router-link to="/">首页</router-link></li>
 			<li><router-link to="/tickets">购票</router-link></li>
 			<li><router-link to="/shopping">商城</router-link></li>
 			<li><router-link to="/find">发现</router-link></li>
 			<li><router-link to="/information"><i class="iconfont icon-wode"></i></router-link></li>
+
 		</ul>
 	</div>
 </template>
@@ -52,5 +54,9 @@
 	em{
 		display: block;
 		position: -20px;
+	}
+	a{
+		color:#fff;
+		text-decoration: none;
 	}
 </style>
