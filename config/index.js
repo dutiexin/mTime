@@ -13,6 +13,7 @@ module.exports = {
     proxyTable: {
 
       '/Service': {
+
           target: 'https://m.mtime.cn',
 
           changeOrigin:true,
@@ -26,6 +27,14 @@ module.exports = {
              　　　　pathRewrite: { '^/users': '/users' }  //这里重写路径/run就代理到对应地址
             　　},
 
+     
+      '/api': {
+        target: 'https://ticket-m.mtime.cn',
+        host: 'ticket-m.mtime.cn',
+        changeOrigin: true,
+      }
+
+
     },
 
     // Various Dev Server settings
@@ -36,7 +45,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */
@@ -52,7 +61,7 @@ module.exports = {
     cssSourceMap: true,
   },
 
-  build: {
+  build:{
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 

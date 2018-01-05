@@ -18,7 +18,7 @@
 		</mt-swipe>
 
 		<ul class="jiaju">
-			<li v-for="data in jiajuList">
+			<li v-for="data in jiajuList" :key="data.id">
 
 				<img :src="data.image" />
 				<p>{{data.iconTitle}}</p>
@@ -46,13 +46,13 @@
 
 
 		<ul class="wanju">
-			<li v-for="data in wanjuList" class="aaa">
+			<li v-for="data in wanjuList" class="aaa" :key="data.id">
 				<p  class="p_one">{{data.name}}</p>
 				<img :src="data.image" class="img_one" />
 				<p>{{data.iconTitle}}</p>
 
 				<ul>
-					<li v-for="data1 in data.subList">
+					<li v-for="data1 in data.subList" :key="data1.id"> 
 						<img :src="data1.image" class="img_two"/>
 						<p>{{data1.title}}</p>
 					</li>
