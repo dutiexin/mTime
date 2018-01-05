@@ -17,6 +17,8 @@ import Header from "@/components/header.vue";
 import Search from "@/components/search.vue";
 import Film from "@/components/film.vue";
 
+// import axios from "axiox";
+
 Vue.component("header1",Header);
 Vue.component("search1",Search);
 Vue.component("film",Film);
