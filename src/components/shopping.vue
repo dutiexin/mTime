@@ -25,12 +25,24 @@
 			</li>
 		</ul>
 
-		<ul class="xilie">
-			<li v-for="(data,index) in lunboList" :key="index">
-				<img :src="data.checkedImage" />
-			</li>
+		<div class="kong">	
+		</div>
 
-		</ul>
+<!-- 
+		<ul class="xilie">
+			<li v-for="(data,index) in xilieList" :key="index">
+				<img :src="data.checkedImage" class="xilie_1"/>
+			</li>
+		</ul> -->
+
+
+		 <div class="swiper-container">
+		    <div class="swiper-wrapper">
+		      <div class="swiper-slide xilie" v-for="data in xilieList">
+		      		<img :src="data.checkedImage" class="xilie_2"/>
+		      </div>	      
+		    </div>
+		  </div>
 
 
 		<ul class="wanju">
@@ -43,8 +55,6 @@
 					<li v-for="data1 in data.subList" :key="data1.id"> 
 						<img :src="data1.image" class="img_two"/>
 						<p>{{data1.title}}</p>
-					<!-- 	<div class="kong">	
-					</div> -->
 					</li>
 					
 				</ul>
@@ -55,12 +65,20 @@
 </template>
 
 
+
 <script>
+	 
+
 	import axios from "axios";
+
 	import { Swipe, SwipeItem } from 'mint-ui';
 	import Vue from 'vue';
 	Vue.component(Swipe.name, Swipe);
 	Vue.component(SwipeItem.name, SwipeItem);
+
+	
+    
+
 	export default{
 		name:"shop",
 		data(){
@@ -82,16 +100,34 @@
 			     that.xilieList=response.data.topic;
 			     that.wanjuList=response.data.category;
 			    console.log(that.xilieList);
-			  })
+			})
 			  .catch(function (error) {
 			    console.log(error);
 			  });
+
+			  setTimeout(()=>{
+			  		var swiper = new Swiper('.swiper-container', {
+					      slidesPerView: 3,
+					      spaceBetween: 30,
+					      pagination: {
+					        el: '.swiper-pagination',
+					        clickable: true,
+					      },
+				    });
+
+			  },800)
+			  
 		}
 
 	}
 </script>
 
+
 <style src="@/assets/font/iconfont.css"></style>
+<!-- 
+<style src="@/assets/swiper/css/swiper1.css"></style>
+<script src="@/assets/swiper/js/swiper1.js"></script> -->
+
 <style scoped>
 	ul,li{
 		list-style:none;
@@ -180,4 +216,16 @@
 		height:2.4rem;
 	}
 
+	/*.xilie{display: flex;}
+	.xilie_2{
+		width:0.79rem;height: 0.84rem;border-radius: 50%;flex-wrap: nowrap;
+		flex:1; margin-right: 0.2rem
+	}*/
+
+	.swiper-container .swiper-wrapper .xilie{display: flex;justify-content: space-between;width:0.8rem;}
+	.swiper-wrapper img{
+		width:0.79rem;
+		height: 0.84rem;
+	}
+	
 </style>

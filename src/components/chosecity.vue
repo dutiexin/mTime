@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="chosecity">
 
 	<div class="choice" @click="choiceCity()">{{youChoiceCityName}}</div>
 	    <!-- <div class="choice" @click="choiceCity2()">{{youChoiceCityName2}}</div> -->
@@ -560,5 +560,7 @@
         border-radius: 10px;;
         color:#3d0a9c;
         margin-top:0.5em;
+        text-align:center;
     }
+   
 </style>

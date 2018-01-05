@@ -7,7 +7,10 @@
 			<li><router-link to="/tickets">购票</router-link></li>
 			<li><router-link to="/shopping">商城</router-link></li>
 			<li><router-link to="/find">发现</router-link></li>
-			<li><router-link to="/information"><i class="iconfont icon-wode"></i></router-link></li>
+			<li><router-link to="/information">
+					<i v-if="isShow">{{user}}</i>
+				<i class="iconfont icon-wode" v-if="isShow1"></i>
+			</router-link></li>
 
 		</ul>
 	</div>
@@ -15,8 +18,33 @@
 
 
 <script>
+	
+
 	export default {
 	  name: 'home',
+	  data:function(){
+	  	return{
+	  		user:"",
+	  		isShow:false,
+	  		isShow1:true,
+	  	}
+	  },
+	  mounted:function(){
+	  	if(sessionStorage.getItem("username")){
+	  		this.user=sessionStorage.getItem("username");
+	  		this.isShow=true;
+	  		this.isShow1=false;
+	  	}
+	  
+	  },
+	  computed:{
+	  	setUsername:function(){
+	  		return sessionStorage.getItem("username");
+	  		// return username;
+	  		// return username
+		},
+	  	
+	  }
 
 	}
 
@@ -59,4 +87,5 @@
 		color:#fff;
 		text-decoration: none;
 	}
+
 </style>

@@ -2,24 +2,22 @@
  <div>
      <div class="denglu">
      	<i class="iconfont icon-wode"></i>	
-     	<input type="text" placeholder="登录邮箱/手机号码" id="user" />
+     	<input type="text" placeholder="请输入用户名" id="user" />
      </div>
 	
 	 <div class="denglu">
      	<i class="iconfont icon-mima"></i>
      	<input type="password" placeholder="密码" id="password" />
-     </div>
-	
-	<mt-button type="primary" @click="login()">登录</mt-button>
+    </div>
 
-	<span class="left"><router-link to="/regist">免费注册</router-link></span>
-	<span class="right">找回密码</span>
-	<div class="clear"></div>
+    <div class="denglu">
+      <i class="iconfont icon-mima"></i>
+      <input type="password" placeholder="验证密码" id="password1" />
+    </div>
+	<h4>我已阅读并同意 《Mtime时光网服务条款》</h4>
+	<mt-button type="primary" @click="regist()">注册</mt-button>
 
-			<p>使用第三方登录</p>
 
-	<i class="iconfont icon-weibo1 red"></i>
-	<i class="iconfont icon-qq fdf"></i>
 
 	<div class="kong"></div>
 
@@ -44,43 +42,34 @@ Vue.component(Button.name, Button);
 
    },
    methods:{
-   	 login(){
-   		var that = this;
-        axios.post(`/users/login`, {
-            user: document.querySelector('#user').value,
+      regist() {
+
+        var that = this;
+        axios.post(`/users/regist`, {
+            username: document.querySelector('#user').value,
             psw: document.querySelector('#password').value
           })
-          .then(function (res) {
-          	console.log(res);
-          	
-            // alert(res.data.message);
-            if(res.data.code===1){
-              sessionStorage.setItem('username', document.querySelector("#user").value);
+          .then(function (response) {
+            if(response.data=='注册成功'){
               Toast({
-	          	  message: '登录成功，跳转至首页！！！！',
-	          	  position: 'middle',
-	          	  className:"tishi",
-	          	  duration: 1000
-	          	});
-
-              location.href='http://localhost:8080/#/';
-              // location.reload();
-              
+              message: '注册成功，请登录！！！！！',
+              position: 'middle',
+              className:"tishi",
+              duration: 1400
+            });
+              location.href='http://localhost:8080/#/information';
             }else{
-            	Toast({
-	          	  message: '用户名或密码错误',
-	          	  position: 'middle',
-	          	  className:"tishi",
-	          	  duration: 1400
-	          	});
+              alert(response.data)
             }
-            console.log(res)
+            
+            
+            console.log(response)
           })
           .catch(function (error) {
             console.log(error);
           })
-         }
-  	 }
+        }
+    }
  }
 </script>
 
@@ -100,10 +89,6 @@ Vue.component(Button.name, Button);
  	.fdf{color:#4cafe9;font-size: 60px;margin-left:0.5rem;}
 	p{border-top:0.2rem;height: 0.4rem;margin: 0.2rem auto;width:100%;border-top:2px solid #ebebeb;text-align: center;line-height: 0.4rem;color:#b3b3b3;}
 	
-	.kong{width:100%;height: 0rem;margin-top: 0.3rem;}
-	a{
-		color:#1e7dd7; text-decoration: none
-	}
-	.tishi{width:2rem;height: 0.6rem;font-size: 20px;}
-	
+	.kong{width:100%;height: 0rem;margin-top: 1.6rem;}
+  h4{margin:0 auto; width:100%;margin-top: 0.2rem;text-align: center;}
 </style>

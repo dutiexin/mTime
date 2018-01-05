@@ -9,6 +9,7 @@ import Tickets from '@/components/tickets'
 import Shopping from '@/components/shopping'
 import Find from '@/components/find'
 import Information from '@/components/information'
+import Regist from '@/components/regist'
 
 // find 子路由 >>>>>>
 import Journalism from '@/components/find/journalism'
@@ -19,8 +20,8 @@ import FilmReview from '@/components/find/filmReview'
 
 
 
-
 Vue.use(Router);
+
 
 
 export default new Router({
@@ -69,6 +70,10 @@ export default new Router({
     {
       path:'/information',
       component:Information
+    },
+    {
+      path:'/regist',
+      component:Regist
     }
   ]
 })
