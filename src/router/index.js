@@ -16,16 +16,6 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
-
-   
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-
-  
-
     {
       path: '/',
       component: Home
@@ -46,7 +36,5 @@ export default new Router({
       path:'/information',
       component:Information
     }
-
- 
   ]
 })

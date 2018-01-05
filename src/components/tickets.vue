@@ -11,7 +11,7 @@
             <div id="list">
                 <ul>
                     <li>
-                        <a>离我最近</a>
+                        <a @click="changeactiveL">离我最近</a>
                     </li>
                     <span>|</span>
                     <li>
@@ -19,18 +19,43 @@
                     </li>
                     <span>|</span>
                     <li>
-                        <a>影厅特效</a>
+                        <a @click="changeactiveR">影厅特效</a>
                     </li>
                 </ul>
+                
             </div>
-            <div class="near">
-
+            <hr>
+            <div class="near" v-show="isshowL">
+              <ul>
+                <li><a>离我最近</a></li>
+                <li class="line"></li>
+                <li><a>价格最低</a></li>
+                 <li class="line"></li>
+              </ul>
+            </div>
+            <div class="special_effect" v-show="isshowR">
+              <dl>
+                <dt>
+                  <a><span>不限</span></a>
+                  <a><span>3D</span></a>
+                  <a><span>IMAX</span></a>
+                  <a><span>VIP</span></a>
+                </dt>
+                <dd>
+                  <a><span>4D</span></a>
+                  <a><span>巨幕</span></a>
+                  <a><span>4K</span></a>
+                  <a><span>杜比</span></a>
+                </dd>
+                <dd class="lovers">
+                  <a><span>情侣座</span></a>
+                </dd>
+              </dl>
+              
+                
             </div>
             <div class="wholecity">
-
-            </div>
-            <div class="special_effect">
-
+                <wholecity></wholecity>
             </div>
 
         </div>
@@ -72,6 +97,7 @@
 <script>
 import { Swipe, SwipeItem } from "mint-ui";
 import axios from "axios";
+import { Indicator } from 'mint-ui';
 export default {
   name: "tickets",
   data() {
@@ -82,11 +108,14 @@ export default {
       has3D:true,
       has4D:true,
       hasIMAX:true,
-      hasVIP:true
-    };
+      hasVIP:true,
+      isshowL:false,
+      isshowR:false,
+    }
   },
   components: {},
   mounted() {
+    Indicator.open('加载中...');
     axios
       .get(
         "/api/proxy/ticket/OnlineLocationCinema/OnlineCinemasByCity.api?locationId=729&_=1515045871712"
@@ -120,11 +149,26 @@ export default {
         //         console.log(this.hasIMAX)
         //         return this.hasIMAX=!this.hasIMAX
         //     } 
+        Indicator.close();
       })
       .catch(err => {
         console.log(err);
       });
-  }
+      //下拉菜单唯一性判断
+      // if(this.isshowL=this.isshowR){
+      //   return this.isshowL=!this.isshowR;
+      // }
+  },
+   methods:{
+      changeactiveL(){
+        this.isshowL=!this.isshowL;
+        this.isshowR=false;
+      },
+      changeactiveR(){
+        this.isshowR=!this.isshowR;
+        this.isshowL=false;
+      }
+    }
 };
 </script>
 
@@ -154,7 +198,7 @@ input {
   padding: 1em 1em;
 }
 .search {
-  height: 4em;
+  height: 3em;
   display: flex;
   justify-content: space-around;
   div {
@@ -165,9 +209,9 @@ input {
     border: 1px solid #ccc;
     border-radius: 0.5em;
     margin-top:0.5em;
-
+    
     padding-left: 2em;
-    background: url("../assets/下载.png") no-repeat 0.5em 0.4em;
+    background: url("../assets/下载.png") no-repeat 0.5em 0.6em;
     background-size: 1.5em 1.5em;
   }
 }
@@ -175,8 +219,11 @@ input {
   margin-top:0.5em;
   height:3em;
   width: 6em;
+  outline: none;
   border: 1px solid #fff;
   border-radius: 1em;
+ 
+  
 }
 #list {
   height: 1.5em;
@@ -201,6 +248,35 @@ input {
     }
   }
 }
+.near{
+  ul{
+    width:100%;
+    height:100%;
+   a{
+     display: block;
+     margin:0.2em 0;
+   }
+    .line{
+      width:100%;
+      height: 1px;
+      background:#ccc;
+    }
+  }
+}
+.special_effect{
+  span{
+    text-align: center;
+    margin:0.25em .5em;
+    display: inline-block;
+    border:1px solid #000;
+    width:4em;
+  }
+  .lovers{
+    text-align:center;
+  }
+ 
+}
+// 轮播图
 .lunbo {
   img {
     width: 100%;

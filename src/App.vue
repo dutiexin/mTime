@@ -18,28 +18,25 @@ import Header from "@/components/header.vue";
 import Search from "@/components/search.vue";
 import Film from "@/components/film.vue";
 import Home from "@/components/home.vue";
-import Chosecity from "@/components/chosecity"
-
+import Chosecity from "@/components/chosecity";
+import Wholecity from "@/components/wholecity";
+import HotPoints from "@/components/hotpoints";
+import Footer from "@/components/footer";
 
 Vue.component("header1",Header);
 Vue.component("search1",Search);
 Vue.component("film",Film);
 Vue.component("home",Home);
 Vue.component("chosecity",Chosecity);
+Vue.component("wholecity",Wholecity);
 
-import HotPoints from "@/components/hotpoints"
-import Footer from "@/components/footer"
-Vue.component("hotpoints",HotPoints)
-Vue.component("footernav",Footer)
+Vue.component("hotpoints",HotPoints);
+Vue.component("footernav",Footer);
 
 export default {
   name: 'app',
   mounted:function(){
-    // Promise.all([axios.get('/Service/callback.mi/Showtime/LocationMovies.api?locationId=729&t=2018131341456208'),axios
-    //   .get("/Service/callback.mi/PageSubArea/GetFirstPageAdvAndNews.api?t=2018139203983516")]).then(res=>{
-    //   console.log(res.data);
-    //   Indicator.close();
-    // })
+  
   }
 }
 </script>
