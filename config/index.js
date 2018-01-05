@@ -14,12 +14,17 @@ module.exports = {
 
       '/Service': {
           target: 'https://m.mtime.cn',
-          host: 'm.maizuo.com',
+
           changeOrigin:true,
           // pathRewrite: {
           //     '^/v4/api': '/v4/api'
           //   }
-      }
+      },
+      '/users': {//路径的匹配规则，以/v4开头的路径自动代理到目标服务器
+                    target: 'http://localhost:3000', //目标服务器
+            　　　　 changeOrigin: true, //开启代理
+             　　　　pathRewrite: { '^/users': '/users' }  //这里重写路径/run就代理到对应地址
+            　　},
 
     },
 

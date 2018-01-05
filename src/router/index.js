@@ -9,15 +9,16 @@ import Tickets from '@/components/tickets'
 import Shopping from '@/components/shopping'
 import Find from '@/components/find'
 import Information from '@/components/information'
+import Regist from '@/components/regist'
 
 
 Vue.use(Router);
 
 
 export default new Router({
+  mode: 'history',
   routes: [
-
-   
+  
     {
       path: '/',
       name: 'home',
@@ -45,6 +46,10 @@ export default new Router({
     {
       path:'/information',
       component:Information
+    },
+    {
+      path:'/regist',
+      component:Regist
     }
 
  

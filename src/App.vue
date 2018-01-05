@@ -34,14 +34,12 @@ Vue.component("footernav",Footer)
 export default {
   name: 'app',
   mounted:function(){
-    // Promise.all([axios.get('/Service/callback.mi/Showtime/LocationMovies.api?locationId=729&t=2018131341456208'),axios
-    //   .get("/Service/callback.mi/PageSubArea/GetFirstPageAdvAndNews.api?t=2018139203983516")]).then(res=>{
-    //   console.log(res.data);
-    //   Indicator.close();
-    // })
-  }
+
+  },
+ 
 }
 </script>
+
 
 <style>
 body{
