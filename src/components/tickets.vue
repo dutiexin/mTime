@@ -81,12 +81,16 @@
                 <dd>
                     <span>{{'地址:'+data.address}}</span>
                 </dd>
+                
                 <dd class="typelist">
-                    <span v-show="has3D">3D</span>
-                    <span v-show="has4D">4D</span>
-                    <span v-show="hasIMAX">IMAX</span>
-                    <span v-show="hasVIP">VIP</span>
-                    
+                    <span v-show="(data.feature.has3D==1)?true:false">3D</span>
+                    <span v-show="(data.feature.hasFeature4D==1)?true:false">4D</span>
+                    <span v-show="(data.feature.hasFeature4K==1)?true:false">4K</span>
+                    <span v-show="(data.feature.hasFeatureDolby==1)?true:false">杜比</span>
+                    <span v-show="(data.feature.hasIMAX==1)?true:false">IMAX</span>
+                    <span v-show="(data.feature.hasVIP==1)?true:false">VIP</span>
+                    <span v-show="(data.feature.hasLoveseat==1)?true:false">情侣座</span>
+                    <span v-show="(data.feature.hasFeatureHuge==1)?true:false">巨幕</span> 
                 </dd>
                 <dd></dd>
             </dl>
@@ -103,12 +107,11 @@ export default {
   data() {
     return {
       datalist: [],
-      feature:[],
       index:[],
-      has3D:true,
-      has4D:true,
-      hasIMAX:true,
-      hasVIP:true,
+      // has3D:true,
+      // has4D:true,
+      // hasIMAX:true,
+      // hasVIP:true,
       isshowL:false,
       isshowR:false,
       isshowM:false,
@@ -125,32 +128,9 @@ export default {
       .then(res => {
         // console.log(res.data);
         this.datalist=res.data;
-        // this.datalist.forEach((ele,index)=>{
-        //     this.feature=[...ele]
+        // this.datalist.forEach((el,index)=>{
+        //       console.log(this.datalist[index].feature.has3D)
         // })
-        // for(let i in this.datalist){
-        //    this.feature=this.datalist[i]
-        // }
-        // console.log(this.index);
-        //  if(this.feature.has3D==1){
-        //         console.log(this.has3D)
-        //         return this.has3D=!this.has3D
-        //     } 
-            
-        //     if(this.feature.hasFeature4D==1){
-        //         console.log(this.has4D)
-        //         return this.has4D=!this.has4D
-        //     } 
-            
-        //      if(this.feature.hasIMAX==1){
-        //         console.log(this.hasIMAX)
-        //         return this.hasIMAX=!this.hasIMAX
-        //     } 
-            
-        //     if(this.feature.hasIMAX==1){
-        //         console.log(this.hasIMAX)
-        //         return this.hasIMAX=!this.hasIMAX
-        //     } 
         Indicator.close();
       })
       .catch(err => {

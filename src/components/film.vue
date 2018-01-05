@@ -8,7 +8,7 @@
 		<div class="clear"></div>
 
 		<ul>
-			<li v-for="(data,index) in dataList" :key="data.id" v-if="index>7?false:true">
+			<li v-for="(data,index) in dataList" :key="data.id" v-if="index>7?false:true" @click="handle(data.id)">
 				<img :src="data.img" />
 				<span>{{data.r}}</span>
 				<p>{{data.t}}</p>
@@ -35,6 +35,7 @@ import axios from "axios";
 import MintUI from 'mint-ui';
 import { Indicator } from 'mint-ui';
 import 'mint-ui/lib/style.css';
+import router from "@/router";
 Vue.use(MintUI);
 
 
@@ -46,12 +47,20 @@ Vue.use(MintUI);
 				dataList:[],
 			}
 		},
+		methods:{
+			handle:function(num){
+				console.log(132);
+				router.push(`/detail/${num}`);
+				// router.push({name:"detail",params:{id:num}})
+			}
+		},
 		mounted:function(){
 			var that=this;
 			Indicator.open();
 			axios.get('/Service/callback.mi/Showtime/LocationMovies.api?locationId=729&t=2018131341456208')
 			  .then(function (response) {
 			    that.dataList=response.data.ms;
+			    console.log(111)
 			    console.log(that.dataList);
 			    Indicator.close();
 			  })

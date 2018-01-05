@@ -5,6 +5,7 @@ import App from '@/components/header.vue'
 
 
 import Home from '@/components/home'
+import Detail from '@/components/detail'
 import Tickets from '@/components/tickets'
 import Shopping from '@/components/shopping'
 import Find from '@/components/find'
@@ -29,6 +30,11 @@ export default new Router({
     {
       path: '/',
       component: Home
+    },
+    {
+      name:"detail",
+      path:'/detail/:id', 
+      component:Detail
     },
     {
       path:'/tickets',
