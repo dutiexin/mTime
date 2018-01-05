@@ -23,6 +23,8 @@ import Wholecity from "@/components/wholecity";
 import HotPoints from "@/components/hotpoints";
 import Footer from "@/components/footer";
 
+// import axios from "axiox";
+
 Vue.component("header1",Header);
 Vue.component("search1",Search);
 Vue.component("film",Film);

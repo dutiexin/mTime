@@ -15,7 +15,7 @@
                     </li>
                     <span>|</span>
                     <li>
-                        <a>全程</a>
+                        <a @click="changeactiveM">全程</a>
                     </li>
                     <span>|</span>
                     <li>
@@ -54,18 +54,18 @@
               
                 
             </div>
-            <div class="wholecity">
+            <div class="wholecity" v-show="isshowM">
                 <wholecity></wholecity>
             </div>
 
         </div>
-        <div class="lunbo">
-            <mt-swipe :auto="2000" :showIndicators="false" style="height:5em;width:100%;overflow:hidden;">
+        <div class="lunbo" v-show="changeactiveM_isshow">
+            <mt-swipe :auto="2000" :showIndicators="false" style="height:1rem;width:100%;overflow:hidden;">
                 <mt-swipe-item><img src="../assets/banner1.jpg"></mt-swipe-item>
                 <mt-swipe-item><img src="../assets/banner2.jpg"></mt-swipe-item>
             </mt-swipe>
         </div>
-        <div class="missing">
+        <div class="missing" v-show="changeactiveM_isshow">
             <p><img src="../assets/404_location_3x_4eee0d46.png" alt=""></p>
             <p>位置信息获取失败，请开启定位功能</p>
             <p>
@@ -111,6 +111,8 @@ export default {
       hasVIP:true,
       isshowL:false,
       isshowR:false,
+      isshowM:false,
+      changeactiveM_isshow:true
     }
   },
   components: {},
@@ -121,7 +123,7 @@ export default {
         "/api/proxy/ticket/OnlineLocationCinema/OnlineCinemasByCity.api?locationId=729&_=1515045871712"
       )
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         this.datalist=res.data;
         // this.datalist.forEach((ele,index)=>{
         //     this.feature=[...ele]
@@ -129,7 +131,7 @@ export default {
         // for(let i in this.datalist){
         //    this.feature=this.datalist[i]
         // }
-        console.log(this.index);
+        // console.log(this.index);
         //  if(this.feature.has3D==1){
         //         console.log(this.has3D)
         //         return this.has3D=!this.has3D
@@ -163,10 +165,20 @@ export default {
       changeactiveL(){
         this.isshowL=!this.isshowL;
         this.isshowR=false;
+        this.isshowM=false;
+        this.changeactiveM_isshow=true;
       },
       changeactiveR(){
         this.isshowR=!this.isshowR;
         this.isshowL=false;
+        this.isshowM=false;
+        this.changeactiveM_isshow=true;
+      },
+      changeactiveM(){
+        this.isshowM=!this.isshowM;
+        this.isshowR=false;
+        this.isshowL=false;
+        this.changeactiveM_isshow=!this.changeactiveM_isshow;
       }
     }
 };
