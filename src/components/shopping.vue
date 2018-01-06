@@ -47,7 +47,7 @@
 
 		<ul class="wanju">
 			<li v-for="data in wanjuList" class="aaa" :key="data.id">
-<<<<<<< HEAD
+
 				
 					<p class="p_one"> {{data.name}} </p>
 					<img :src="data.image" class="img_one" />
@@ -81,6 +81,7 @@
 	import router from "@/router";
 
 	import { Swipe, SwipeItem } from 'mint-ui';
+	import { Indicator } from 'mint-ui';
 	import Vue from 'vue';
 	Vue.component(Swipe.name, Swipe);
 	Vue.component(SwipeItem.name, SwipeItem);
@@ -108,6 +109,7 @@
 		},
 
 		mounted:function(){
+			Indicator.open('加载中...');
 			var that=this;
 			axios.get('Service/callback.mi/PageSubArea/MarketFirstPageNew.api?t=20181321115112921')
 			  .then(function (response) {
@@ -119,6 +121,7 @@
 
 			     console.log(that.wanjuList)
 			    // console.log(that.xilieList);
+			    Indicator.close();
 
 			})
 			  .catch(function (error) {

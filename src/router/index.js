@@ -1,13 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-<<<<<<< HEAD
-// import App from '@/components/header.vue'
-=======
-import App from '@/components/header.vue'
->>>>>>> 6030c0c0831d44be1b69eda28a292fef7131a40c
-
-
 import Home from '@/components/home'
 import Detail from '@/components/detail'
 import Tickets from '@/components/tickets'

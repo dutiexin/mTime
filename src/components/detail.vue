@@ -31,14 +31,11 @@
 			<div class="kong">	
 			</div>
 
-			<div class="content">{{datalist.content}}</div>
-
-
 			<div class="kong">
 			</div>
 
 			<div class="content" :class="{text_overflow:isshow1}">
-				<a @click="showAllA">{{datalist.content}}</a>
+				<a @click="showAllA"><span class="showAll_color">点击展开:</span>{{datalist.content}}</a>
 				</div>
 			<div class="kong">
 			</div>
@@ -46,7 +43,7 @@
 				<h3>精选影评({{hotlongs.totalCount}})</h3>
 				<h3>{{hotlongs.comments[0].title}}</h3>
 				<p :class="{text_overflow:isshow2}">
-					<a @click="showAllB">{{hotlongs.comments[0].content}}</a>
+					<a @click="showAllB"><span class="showAll_color">点击展开:&nbsp;&nbsp;</span>{{hotlongs.comments[0].content}}</a>
 				</p>
 				<div class="person">
 					<img :src="hotlongs.comments[0].headurl" class="pic">
@@ -220,7 +217,7 @@ export default {
 }
 
 .talking_good > p {
-  text-indent: 2em;
+  
   line-height: 1.5em;
 }
 .person {
@@ -294,6 +291,11 @@ export default {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+.showAll_color{
+  color: blue;
+  font-weight: bold;
+  font-style: italic;
 }
 
 
