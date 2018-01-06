@@ -1,3 +1,4 @@
+
 <template>
 	<div>
 		<h2>
@@ -145,3 +146,4 @@ Vue.use(MintUI);
 		margin-top:0.1rem;
 	}
 </style>
+

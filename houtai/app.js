@@ -5,7 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+<<<<<<< HEAD
 var session = require("express-session");
+=======
+>>>>>>> 6030c0c0831d44be1b69eda28a292fef7131a40c
 var mongoose=require("mongoose");
 mongoose.connect("mongodb://localhost:27017/h51706")
 
@@ -26,6 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+<<<<<<< HEAD
 app.use(session({
     name: "DtxSessID",
     secret:"dwadjioj",
@@ -33,6 +37,8 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));  
+=======
+>>>>>>> 6030c0c0831d44be1b69eda28a292fef7131a40c
 app.use('/', index);
 app.use('/users', users);
 

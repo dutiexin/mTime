@@ -47,6 +47,7 @@
 
 		<ul class="wanju">
 			<li v-for="data in wanjuList" class="aaa" :key="data.id">
+<<<<<<< HEAD
 				
 					<p class="p_one"> {{data.name}} </p>
 					<img :src="data.image" class="img_one" />
@@ -66,6 +67,7 @@
 			</li>
 		</ul>
 		
+
 	</div>
 </template>
 
@@ -75,7 +77,9 @@
 	 
 
 	import axios from "axios";
+
 	import router from "@/router";
+
 	import { Swipe, SwipeItem } from 'mint-ui';
 	import Vue from 'vue';
 	Vue.component(Swipe.name, Swipe);
@@ -95,12 +99,14 @@
 			}
 			
 		},
+
 		methods:{
 			handle(num){
 				router.push(`/shoppingDetail/${num}`);
 				// router.push({name:"shoppingDetail",params:{id:num}})
 			}
 		},
+
 		mounted:function(){
 			var that=this;
 			axios.get('Service/callback.mi/PageSubArea/MarketFirstPageNew.api?t=20181321115112921')
@@ -110,8 +116,10 @@
 			    that.lunboList=response.data.scrollImg;
 			     that.xilieList=response.data.topic;
 			     that.wanjuList=response.data.category;
+
 			     console.log(that.wanjuList)
 			    // console.log(that.xilieList);
+
 			})
 			  .catch(function (error) {
 			    console.log(error);

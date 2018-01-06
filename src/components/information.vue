@@ -29,21 +29,25 @@
 <script>
 import Vue from 'vue';
 import axios from 'axios';
+
 import store from '@/store';
 import { Button } from 'mint-ui';
 import { Toast } from 'mint-ui';
 import Router from 'vue-router'
 import router from '@/router'
+
 Vue.component(Button.name, Button);
 
  export default {
    name: '',
    data () {
      return {
+
         username:''
      }
    },
    mounted:function(){
+
 
    },
    components: {
@@ -56,20 +60,24 @@ Vue.component(Button.name, Button);
             user: document.querySelector('#user').value,
             psw: document.querySelector('#password').value
           })
+
           .then((res)=> {
           	console.log(res);
             if(res.data.code===1){
               // sessionStorage.setItem('username', document.querySelector("#user").value);
+
               Toast({
 	          	  message: '登录成功，跳转至首页！！！！',
 	          	  position: 'middle',
 	          	  className:"tishi",
 	          	  duration: 1000
 	          	});
+
               
               this.$store.dispatch('usercomming',res);
               router.push('/');
               // location.href='http://localhost:8080/#/';
+
               // location.reload();
               
             }else{

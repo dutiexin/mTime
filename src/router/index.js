@@ -1,12 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+<<<<<<< HEAD
 // import App from '@/components/header.vue'
+=======
+import App from '@/components/header.vue'
+>>>>>>> 6030c0c0831d44be1b69eda28a292fef7131a40c
 
 
 import Home from '@/components/home'
 import Detail from '@/components/detail'
 import Tickets from '@/components/tickets'
+
 
 import ShoppingDetail from '@/components/shoppingDetail'
 import Shopping from '@/components/shopping'
@@ -18,6 +23,9 @@ import Regist from '@/components/regist'
 
 
 import Test from '@/components/test'
+
+
+
 
 
 // find 子路由 >>>>>>
@@ -34,7 +42,9 @@ Vue.use(Router);
 
 
 export default new Router({
+
   mode:'history',
+
   routes: [
     {
       path: '/',
@@ -50,6 +60,7 @@ export default new Router({
       component:Tickets
     },
     {
+
       name:"detail",
       path:'/detail/:id', 
       component:Detail
@@ -64,6 +75,7 @@ export default new Router({
           name:"shoppingDetail",
           component:ShoppingDetail
         },
+
 
 
     {

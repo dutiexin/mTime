@@ -15,7 +15,10 @@
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "express-session": "^1.15.6",
+=======
+>>>>>>> 6030c0c0831d44be1b69eda28a292fef7131a40c
     "mongoose": "^5.0.0-rc1"
   }
 }

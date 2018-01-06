@@ -27,10 +27,12 @@
 			line-height:0.4rem">{{datalist.commonSpecial}}</span>
 			<p class="p_1">查影讯/购票</p>
 
+
 			<div class="kong">	
 			</div>
 
 			<div class="content">{{datalist.content}}</div>
+
 
 			<div class="kong">
 			</div>
@@ -293,5 +295,7 @@ export default {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+
+
 
 </style>

@@ -3,6 +3,7 @@ import Vue from "vue";
 
 Vue.use(Vuex);
 
+
 import  axios from "axios";
 
 const store = new Vuex.Store({
@@ -45,6 +46,10 @@ const store = new Vuex.Store({
 
 /*const store = new Vuex.Store({
 	state:{
+=======
+const store = new Vuex.Store({
+	state:{
+>>>>>>> 6030c0c0831d44be1b69eda28a292fef7131a40c
 		active:null
 	},
 
@@ -63,7 +68,9 @@ const store = new Vuex.Store({
         },
         changeactive_remove:function(state,val){
             state.active=val;
+<<<<<<< HEAD
         }*/
+
 
 	}
 })

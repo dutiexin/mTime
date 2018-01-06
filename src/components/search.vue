@@ -1,3 +1,4 @@
+
 <template>
 	<div class="search_header">
 		<chosecity></chosecity>
@@ -71,4 +72,5 @@
 	
 	
 	
+
 </style>
