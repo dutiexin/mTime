@@ -38,6 +38,9 @@
    },
    components: {
 
+   },
+   mounted () {
+      this.$store.commit("changeactive_remove",0)
    }
  }
 </script>

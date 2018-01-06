@@ -11,6 +11,7 @@ import Shopping from '@/components/shopping'
 import Find from '@/components/find'
 import Information from '@/components/information'
 import Regist from '@/components/regist'
+import Test from '@/components/test'
 
 // find 子路由 >>>>>>
 import Journalism from '@/components/find/journalism'
@@ -80,6 +81,10 @@ export default new Router({
     {
       path:'/regist',
       component:Regist
+    },
+    {
+      path:'/test',
+      component:Test
     }
   ]
 })

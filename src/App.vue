@@ -2,16 +2,13 @@
   <div id="app">
     <header1></header1>
 
-    
     <router-view/>
     <footernav></footernav>
-    
 
   </div>
 </template>
 
 <script>
-
 import Vue from "vue";
 import axios from "axios";
 import Header from "@/components/header.vue";
@@ -25,34 +22,39 @@ import Footer from "@/components/footer";
 
 // import axios from "axiox";
 
-Vue.component("header1",Header);
-Vue.component("search1",Search);
-Vue.component("film",Film);
-Vue.component("home",Home);
-Vue.component("chosecity",Chosecity);
-Vue.component("wholecity",Wholecity);
+Vue.component("header1", Header);
+Vue.component("search1", Search);
+Vue.component("film", Film);
+Vue.component("home", Home);
+Vue.component("chosecity", Chosecity);
+Vue.component("wholecity", Wholecity);
 
-Vue.component("hotpoints",HotPoints);
-Vue.component("footernav",Footer);
+Vue.component("hotpoints", HotPoints);
+Vue.component("footernav", Footer);
 
 export default {
-  name: 'app',
-  mounted:function(){
-  
+  name: "app",
+  data() {
+    return {
+     
+    };
+  },
+  mounted: function() {
+      
   }
-}
+};
 </script>
 
 
 <style>
-body{
+body {
   font-size: 16px;
 }
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
 }
-body{
-  font-size:0.16rem;
+body {
+  font-size: 0.16rem;
 }
 </style>
