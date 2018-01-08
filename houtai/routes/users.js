@@ -2,20 +2,18 @@ var express = require('express');
 var router = express.Router();
 var UserModel = require("../model/UserModel.js");
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 6030c0c0831d44be1b69eda28a292fef7131a40c
+
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
 router.post('/login', function(req, res, next) {
-<<<<<<< HEAD
+
 	console.log("000");
-=======
->>>>>>> 6030c0c0831d44be1b69eda28a292fef7131a40c
+
 	UserModel.find({username: req.body.user, psw: req.body.psw}, (err, docs)=>{
 		var result = {
 			code: 1,
@@ -24,7 +22,7 @@ router.post('/login', function(req, res, next) {
 		if(err || docs.length == 0) {
 			result.code = -110;
 			result.message = "登录失败";
-<<<<<<< HEAD
+
 
 		}else{
 			req.session.username=req.body.user;
@@ -33,18 +31,12 @@ router.post('/login', function(req, res, next) {
 			
 		console.log(111);
 		console.log(req.session);
-=======
-		}
 
->>>>>>> 6030c0c0831d44be1b69eda28a292fef7131a40c
 		res.send(JSON.stringify(result));
 	})
 });
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 6030c0c0831d44be1b69eda28a292fef7131a40c
 router.post('/regist',function(req, res, next){
 	UserModel.find({username: req.body.user},function (err, docs) {
 		if(docs.length > 0) {
