@@ -16,6 +16,9 @@ import Regist from '@/components/regist'
 
 
 import Test from '@/components/test'
+import NowPlaying from '@/components/nowplaying'
+import ComingSoon from '@/components/comingsoon'
+
 
 
 
@@ -36,12 +39,20 @@ Vue.use(Router);
 
 export default new Router({
 
-  mode:'history',
+  mode:'hash',
 
   routes: [
     {
       path: '/',
       component: Home
+    },
+    {
+      path: '/nowplaying',
+      component: NowPlaying
+    },
+    {
+      path: '/comingsoon',
+      component: ComingSoon
     },
     {
       name:"detail",

@@ -1,8 +1,8 @@
 
 <template>
 	<div>
-		<h2>
-			<span>正在热映（31部）</span>
+		<h2 v-if="dataList && dataList.length">
+			<span @click="$router.push('/nowplaying')">正在热映（{{dataList.length}}）</span>
 			<i class="iconfont icon-you"></i>
 		</h2>
 
@@ -17,7 +17,7 @@
 		</ul>
 
 		<h2>
-			<span>即将热映（57部）</span>
+			<span @click="$router.push('/comingsoon')">即将热映（{{totalComingMovie}}部）</span>
 			<i class="iconfont icon-you"></i>
 		</h2>
 		
@@ -46,6 +46,7 @@ Vue.use(MintUI);
 		data(){
 			return{
 				dataList:[],
+				totalComingMovie: ''
 			}
 		},
 		methods:{
@@ -60,9 +61,8 @@ Vue.use(MintUI);
 			Indicator.open();
 			axios.get('/Service/callback.mi/Showtime/LocationMovies.api?locationId=729&t=2018131341456208')
 			  .then(function (response) {
-			    that.dataList=response.data.ms;
-			    console.log(111)
-			    console.log(that.dataList);
+				that.dataList=response.data.ms;
+				that.totalComingMovie = response.data.totalComingMovie;
 			    Indicator.close();
 			  })
 			  .catch(function (error) {

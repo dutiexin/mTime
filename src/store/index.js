@@ -20,8 +20,6 @@ const store = new Vuex.Store({
 			store.commit('user',payload);
 		}
 	},
-
-
 	// getters:{
 	// 	getComingListFilms:function(state){
 	// 		return state.comingsoon?state.comingsoon.data.films:[]
@@ -34,10 +32,7 @@ const store = new Vuex.Store({
 	mutations:{
 	
 		user:function(state,payload){
-			// console.log(46465465465)
-			// console.log(payload);
 			state.username=payload.data.username1;
-			console.log(111)
 		},
 		kerwincomingsoon:function(state,payload){
 			state.comingsoon = payload;
