@@ -4,25 +4,14 @@ import Router from 'vue-router'
 import Home from '@/components/home'
 import Detail from '@/components/detail'
 import Tickets from '@/components/tickets'
-
-
 import ShoppingDetail from '@/components/shoppingDetail'
 import Shopping from '@/components/shopping'
-
 import Find from '@/components/find'
 import Information from '@/components/information'
 import Regist from '@/components/regist'
-
-
-
 import Test from '@/components/test'
 import NowPlaying from '@/components/nowplaying'
 import ComingSoon from '@/components/comingsoon'
-
-
-
-
-
 
 // find 子路由 >>>>>>
 import Journalism from '@/components/find/journalism'
@@ -31,16 +20,10 @@ import RankingList from '@/components/find/rankingList'
 import FilmReview from '@/components/find/filmReview'
 // find 子路由 <<<<<<
 
-
-
 Vue.use(Router);
 
-
-
 export default new Router({
-
   mode:'hash',
-
   routes: [
     {
       path: '/',
