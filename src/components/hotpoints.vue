@@ -35,7 +35,7 @@ export default {
   mounted() {
       
     axios
-      .get("/Service/callback.mi/PageSubArea/GetFirstPageAdvAndNews.api?t=2018139203983516")
+      .get("https://m.mtime.cn/callback.mi/PageSubArea/GetFirstPageAdvAndNews.api?t=2018139203983516")
       .then((res)=>{
         console.log(res.data.hotPoints);
         this.datalist=res.data.hotPoints;

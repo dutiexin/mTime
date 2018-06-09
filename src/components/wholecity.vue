@@ -45,7 +45,7 @@ import axios from 'axios'
 
    },
    mounted () {
-       axios.get("/api/proxy/ticket/cinema/screening.api?locationId=290&_=1515120430405")
+       axios.get("https://ticket-m.mtime.cn/proxy/ticket/cinema/screening.api?locationId=290&_=1515120430405")
        .then((res)=>{
         //    console.log(res.data.data.districts);
            this.datalist=res.data.data.districts;

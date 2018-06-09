@@ -22,11 +22,11 @@
 			}
 		},
 		mounted:function(){
-			axios.get(`/Service/callback-mall.mi/product/detail.api?goodsId=${this.$route.params.id}&locationId=290&t=2018169511896275`).then((res)=>{
+			axios.get(`https://m.mtime.cn/callback-mall.mi/product/detail.api?goodsId=${this.$route.params.id}&locationId=290&t=2018169511896275`).then((res)=>{
 				this.datalist=res.data;
 				console.log(this.datalist);
 			});
-			axios.get(`/Service/callback.mi/ECommerce/GoodsImageTextInfo.api?t=2018169551799876&goodsId=${this.$route.params.id}&pageIndex=1`).then((res)=>{
+			axios.get(`https://m.mtime.cn/callback.mi/ECommerce/GoodsImageTextInfo.api?t=2018169551799876&goodsId=${this.$route.params.id}&pageIndex=1`).then((res)=>{
 				this.goodslist=res.data;
 				console.log(this.goodslist);
 			})

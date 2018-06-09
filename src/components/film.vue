@@ -9,7 +9,7 @@
 		<div class="clear"></div>
 
 		<ul>
-			<li v-for="(data,index) in dataList" :key="data.id" v-if="index>7?false:true" @click="handle(data.id)">
+			   <li v-for="(data,index) in dataList" :key="data.id" v-if="index>7?false:true" @click="handle(data.id)">
 				<img :src="data.img" />
 					<span>{{data.r}}</span>
 				<p>{{data.t}}</p>
@@ -58,7 +58,7 @@ Vue.use(MintUI);
 		mounted:function(){
 			var that=this;
 			Indicator.open();
-			axios.get('/Service/callback.mi/Showtime/LocationMovies.api?locationId=729&t=2018131341456208')
+			axios.get('https://m.mtime.cn/callback.mi/Showtime/LocationMovies.api?locationId=729&t=2018131341456208')
 			  .then(function (response) {
 			    that.dataList=response.data.ms;
 			    console.log(111)

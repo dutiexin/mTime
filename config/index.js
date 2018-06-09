@@ -8,14 +8,12 @@ module.exports = {
   dev: {
 
     // Paths
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: './static',
     assetsPublicPath: '/',
     proxyTable: {
 
       '/Service': {
-
           target: 'https://m.mtime.cn',
-
           changeOrigin:true,
           // pathRewrite: {
           //     '^/v4/api': '/v4/api'
@@ -26,15 +24,11 @@ module.exports = {
             　　　　 changeOrigin: true, //开启代理
 
             　　},
-
-     
       '/api': {
         target: 'https://ticket-m.mtime.cn',
         host: 'ticket-m.mtime.cn',
         changeOrigin: true,
       }
-
-
     },
 
     // Various Dev Server settings
@@ -64,11 +58,10 @@ module.exports = {
   build:{
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
-
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps

@@ -97,7 +97,7 @@ export default {
     Indicator.open("加载中...");
     axios
       .get(
-        `/Service/callback.mi/movie/Detail.api?movieId=${this.$route.params
+        `https://m.mtime.cn/callback.mi/movie/Detail.api?movieId=${this.$route.params
           .id}&locationId=729&t=20181517581436963`
       )
       .then(res => {
@@ -106,7 +106,7 @@ export default {
       });
     axios
       .get(
-        `/Service/callback.mi/Movie/HotLongComments.api?movieId=${this.$route
+        `https://m.mtime.cn/callback.mi/Movie/HotLongComments.api?movieId=${this.$route
           .params.id}&pageIndex=1&t=201816982662783`
       )
       .then(res => {
@@ -115,7 +115,7 @@ export default {
       });
     axios
       .get(
-        `/Service/callback.mi/Showtime/MovieComments.api?movieId=${this.$route
+        `https://m.mtime.cn/callback.mi/Showtime/MovieComments.api?movieId=${this.$route
           .params.id}&pageIndex=1&t=2018169544215423`
       )
       .then(res => {

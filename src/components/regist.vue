@@ -45,7 +45,7 @@ Vue.component(Button.name, Button);
       regist() {
 
         var that = this;
-        axios.post(`/users/regist`, {
+        axios.post(`http://192.168.0.106:3000/regist`, {
             username: document.querySelector('#user').value,
             psw: document.querySelector('#password').value
           })

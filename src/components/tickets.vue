@@ -123,7 +123,7 @@ export default {
     Indicator.open('加载中...');
     axios
       .get(
-        "/api/proxy/ticket/OnlineLocationCinema/OnlineCinemasByCity.api?locationId=729&_=1515045871712"
+        "https://ticket-m.mtime.cn/proxy/ticket/OnlineLocationCinema/OnlineCinemasByCity.api?locationId=729&_=1515045871712"
       )
       .then(res => {
         // console.log(res.data);

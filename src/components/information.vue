@@ -56,7 +56,7 @@ Vue.component(Button.name, Button);
    methods:{
    	 login(){
    		var that = this;
-        axios.post(`/users/login`, {
+        axios.post(`http://192.168.0.106:3000/login`, {
             user: document.querySelector('#user').value,
             psw: document.querySelector('#password').value
           })
