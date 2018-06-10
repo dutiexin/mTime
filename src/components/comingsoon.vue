@@ -22,6 +22,7 @@
                     margin-bottom: 2em;
                     .color-green {
                         color:green;
+                        padding: 3px 0;
                     }
                 }
                 // .buy-ticket {
@@ -42,6 +43,7 @@
 <template>
  <div class="page-nowplaying">
      <h1>{{title}}({{list.length}})</h1>
+     <hr />
      <div class="movie-list-detail" v-for="(item, index) in list" :key="index">
          <div class="list-pic">
              <img :src="item.image" alt="">
@@ -49,7 +51,7 @@
          <div class="list-message">
              <h3>{{item.title}}</h3>
              <p class="description">
-                 <pre><span class="color-green">{{item.wantedCount}}</span>想看 - {{item.type}}</pre>
+                 <pre><span class="color-green">{{item.wantedCount}}</span>人想看 - {{item.type}}</pre>
                  <pre>导演: {{item.director}}</pre>
              </p>
              <p class="movie-amounts">{{item.NearestCinemaCount}}家影院上映{{item.NearestShowtimeCount}}</p>

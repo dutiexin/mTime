@@ -1,7 +1,8 @@
 
 <template>
 	<div class="search_header">
-		<chosecity></chosecity>
+		<!-- <chosecity></chosecity> -->
+		<span class="span_name">齐齐哈尔</span>
 		<span class="span_search"><i class="iconfont icon-fangdajing"></i>影片/影院/影人，任你搜</span>
 	</div>
 </template>
@@ -21,8 +22,6 @@
 		methods:{
 			myFun:function(result){
 				var cityName = result.name;
-				// alert("当前定位城市:"+cityName);
-				// return result.name.substring(0,2);
 				this.aaa=cityName.substring(0,2);
 			}
 		},
@@ -40,21 +39,19 @@
 
 <style src="@/assets/font/iconfont.css"></style>
 <style scoped>
-.search_header{
-	display: flex;
-	width:100%;
-	height: 0.5rem;
-	background: #f6f6f6;
-	font-size:16px;
-	
-}
-	/* div{
+	.search_header{
+		display: flex;
+		justify-content: space-around;
 		width:100%;
 		height: 0.5rem;
 		background: #f6f6f6;
 		font-size:16px;
-		padding-top: 0.1rem;
-	} */
+		vertical-align: middle;
+	}
+	.span_name {
+		vertical-align: center;
+		display: inline-block;
+	}
 	.span_search{
 		width:2.6rem;
 		height:0.35rem;
@@ -66,8 +63,8 @@
 		font-size: 18px;
 		padding-left: 0.1rem;
 		margin-top:0.1rem;
-		
 		color:#dddddd;
+		display: inline-block;
 	}
 	
 	

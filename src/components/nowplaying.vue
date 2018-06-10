@@ -22,9 +22,10 @@
                     padding:3px;
                     color: #ffffff;
                     background: green;
+                    float:right;
                     position: relative;
-                    top:-1.5em;
-                    left: 8em;
+                    top: -20px;
+                    right: 4px;
                 }
                 .description {
                     color:green;
@@ -48,13 +49,14 @@
 <template>
  <div class="page-nowplaying">
      <h1>{{title}}</h1>
+     <hr />
      <div class="movie-list-detail" v-for="(item, index) in list" :key="index">
          <div class="list-pic">
              <img :src="item.img" alt="">
          </div>
          <div class="list-message">
              <h3>{{item.t}}</h3>
-             <span class="score">{{item.r}}</span>
+             <span class="score">{{item.r>0?item.r:"0"}}</span>
              <p class="description">{{item.commonSpecial}}</p>
              <p class="movie-amounts">{{item.NearestCinemaCount}}家影院上映{{item.NearestShowtimeCount}}</p>
              <button class="buy-ticket">购票</button>

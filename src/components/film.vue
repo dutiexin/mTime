@@ -2,8 +2,8 @@
 <template>
 	<div>
 		<h2 v-if="dataList && dataList.length">
-			<span @click="$router.push('/nowplaying')">正在热映（{{dataList.length}}）</span>
-			<i class="iconfont icon-you"></i>
+			<span>正在热映（{{dataList.length}}）</span>
+			<i class="iconfont icon-you" @click="$router.push('/nowplaying')"></i>
 		</h2>
 
 		<div class="clear"></div>
@@ -11,14 +11,14 @@
 		<ul>
 			<li v-for="(data,index) in dataList" :key="data.id" v-if="index>7?false:true" @click="handle(data.id)">
 				<img :src="data.img" />
-					<span>{{data.r}}</span>
+					<span>{{data.r>0?data.r:"0"}}</span>
 				<p>{{data.t}}</p>
 			</li>
 		</ul>
 
 		<h2>
-			<span @click="$router.push('/comingsoon')">即将热映（{{totalComingMovie}}部）</span>
-			<i class="iconfont icon-you"></i>
+			<span>即将热映（{{totalComingMovie}}部）</span>
+			<i class="iconfont icon-you" @click="$router.push('/comingsoon')"></i>
 		</h2>
 		
 		<div class="clear"></div>

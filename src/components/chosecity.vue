@@ -136,7 +136,7 @@
                     },
                     {
                         cityId: 163,
-                        cityName: "丹东",
+                        cityName: "大连",
                         citySpell: "DANDONG",
                         cityFirstLetter: "D",
                     },

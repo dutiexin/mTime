@@ -22,7 +22,8 @@ module.exports = {
           //   }
       },
       '/users': {//路径的匹配规则，以/v4开头的路径自动代理到目标服务器
-                    target: 'http://localhost:3000', //目标服务器
+                    target: 'http://localhost:3001', //目标服务器
+                    host: 'http://localhost:3001',
             　　　　 changeOrigin: true, //开启代理
 
             　　},
