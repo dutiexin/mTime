@@ -62,7 +62,8 @@ Vue.component(Button.name, Button);
           })
 
           .then((res)=> {
-          	console.log(res);
+			  console.log(res);
+			  alert(111);
             if(res.data.code===1){
               // sessionStorage.setItem('username', document.querySelector("#user").value);
 
@@ -72,9 +73,10 @@ Vue.component(Button.name, Button);
 	          	  className:"tishi",
 	          	  duration: 1000
 	          	});
-
-              
-              this.$store.dispatch('usercomming',res);
+			  this.$store.dispatch('usercomming',res);
+			//   document.setCookie(JSON.stringify({
+			// 	  'username': res.data.username1
+			//   }))
               router.push('/');
               // location.href='http://localhost:8080/#/';
 

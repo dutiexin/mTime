@@ -12,6 +12,7 @@ import Regist from '@/components/regist'
 import Test from '@/components/test'
 import NowPlaying from '@/components/nowplaying'
 import ComingSoon from '@/components/comingsoon'
+import ShoppingCar from '@/components/shoppingcar'
 
 // find 子路由 >>>>>>
 import Journalism from '@/components/find/journalism'
@@ -51,6 +52,10 @@ export default new Router({
       name:"detail",
       path:'/detail/:id', 
       component:Detail
+    },
+    {
+      path:"/shoppingcar",
+      component:ShoppingCar
     },
     {
       path:'/shopping',

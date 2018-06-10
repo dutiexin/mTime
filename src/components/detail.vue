@@ -25,7 +25,8 @@
 			<div style="clear:both"></div>
 			<span style="display:block;color:#feaa47;height:0.4rem;width:100%;text-align:center;
 			line-height:0.4rem">{{datalist.commonSpecial}}</span>
-			<p class="p_1">查影讯/购票</p>
+			<p class="p_1" @click="buytickets">购票</p>
+      <!-- <p class="p_1" @click="buytickets">购票</p> -->
 
 
 			<div class="kong">	
@@ -39,7 +40,7 @@
 				</div>
 			<div class="kong">
 			</div>
-			<div class="talking_good">
+			<div class="talking_good" v-if="hotlongs && hotlongs.length">
 				<h3>精选影评({{hotlongs.totalCount}})</h3>
 				<h3>{{hotlongs.comments[0].title}}</h3>
 				<p :class="{text_overflow:isshow2}">
@@ -86,14 +87,40 @@ export default {
   name: "detail",
   data() {
     return {
-      datalist: [],
+      datalist: {},
       hotlongs: [],
 	  hotpoints_short: null,
 	  isshow1:true,
-	  isshow2:true
+    isshow2:true,
+    price: ''
+    }
+  },
+  methods:{
+	  showAllA(){
+		  this.isshow1=!this.isshow1;
+	  },
+	  showAllB(){
+		  this.isshow2=!this.isshow2;
+    },
+    buytickets() {
+      axios.post(`/users/create`,{
+        goods_name : this.datalist.titleCn,
+        price : this.price,
+        img_url: this.datalist.image,
+        count :1,
+      }).then(res => {
+        console.log(res);
+      }).catch(err => {
+        console.log(err);
+      })
+      this.$router.push('/shoppingcar');
+    },
+    radom(min,max) {
+        return Math.floor(Math.random()*(max - min) + min)
     }
   },
   mounted: function() {
+    this.price = this.radom(30,70);
     Indicator.open("加载中...");
     axios
       .get(
@@ -102,7 +129,7 @@ export default {
       )
       .then(res => {
         this.datalist = res.data;
-        console.log(this.datalist);
+        console.log(this.datalist, '231213');
       });
     axios
       .get(
@@ -124,14 +151,6 @@ export default {
 
         Indicator.close();
       });
-  },
-  methods:{
-	  showAllA(){
-		  this.isshow1=!this.isshow1;
-	  },
-	  showAllB(){
-		  this.isshow2=!this.isshow2;
-	  }
   }
 };
 </script>

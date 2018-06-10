@@ -22,8 +22,8 @@ module.exports = {
           //   }
       },
       '/users': {//路径的匹配规则，以/v4开头的路径自动代理到目标服务器
-                    target: 'http://localhost:3001', //目标服务器
-                    host: 'http://localhost:3001',
+                    target: 'localhost:3001', //目标服务器
+                    host: 'localhost:3001',
             　　　　 changeOrigin: true, //开启代理
 
             　　},
@@ -39,7 +39,7 @@ module.exports = {
     },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
+    host: '0.0.0.0', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,

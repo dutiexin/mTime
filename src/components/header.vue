@@ -19,7 +19,7 @@
 
 
 <script>
-	
+	// const username = JSON.parse(document.getCookie('username')).username;
 
 	export default {
 	  name: 'home',
@@ -27,7 +27,8 @@
 	  	return{
 	  		user:"",
 	  		isShow:false,
-	  		isShow1:true,
+			isShow1:true,
+			// setUsername: this.$store.state.username
 	  	}
 	  },
 	  mounted:function(){

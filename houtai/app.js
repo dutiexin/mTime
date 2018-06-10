@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 var session = require("express-session");
 var mongoose=require("mongoose");
-mongoose.connect("mongodb://localhost:27017/h51706")
+// mongoose.connect("mongodb://localhost:27017/h51706");
+mongoose.connect("mongodb://localhost:27017/h51706");
 
 var index = require('./routes/index');
 var users = require('./routes/users');
